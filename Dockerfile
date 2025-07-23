@@ -51,6 +51,7 @@ EXPOSE 5000
 # Start LibreTranslate with the correct host and port from env
 # ENTRYPOINT ["sh", "-c", "./venv/bin/libretranslate --host 0.0.0.0 --port ${PORT}"]
 # ENTRYPOINT ["sh", "-c", "./venv/bin/libretranslate --host 0.0.0.0 --port ${PORT} --allow-origin '*'"]
-ENTRYPOINT [ "./venv/bin/libretranslate", "--host", "*" ]
+ENTRYPOINT ["sh", "-c", "./venv/bin/libretranslate --host 0.0.0.0 --port ${PORT} ,'*'"]
+# ENTRYPOINT [ "./venv/bin/libretranslate", "--host", "*" ]
 
 
