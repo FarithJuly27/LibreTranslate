@@ -49,5 +49,7 @@ RUN if [ "$with_models" = "true" ]; then \
 EXPOSE 5000
 
 # Correct ENTRYPOINT (with fallback if PORT not set)
-ENTRYPOINT sh -c "./venv/bin/libretranslate --host 0.0.0.0 --port ${PORT:-5000}"
+# ENTRYPOINT sh -c "./venv/bin/libretranslate --host 0.0.0.0 --port ${PORT:-5000}"
 # ENTRYPOINT [ "./venv/bin/libretranslate", "--host", "*" ]
+# Use CMD instead of ENTRYPOINT for testing
+CMD ["./venv/bin/libretranslate", "--host", "0.0.0.0", "--port", "5000"]
